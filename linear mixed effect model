@@ -1,0 +1,5 @@
+library("lme4")##加载线性混合模型包
+file1=read.csv(file.choose())##读取文件
+attach(file1)##文件关联方便输入变量名
+lmm1=lmer(sum~treat+(1|site),data=file1)##生成线性混合模型，(1|**)代表混合效应中的随机项
+summary(lmm1)
